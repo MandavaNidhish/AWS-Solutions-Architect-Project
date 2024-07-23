@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+  <header>
+    <h1>Edit Existing Courses</h1>
+    <a href="educator-dashboard.html">Back to Dashboard</a>
+  </header>
+  <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    header {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .card {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Add styles for the buttons */
+    /* Styles for the buttons */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; /* Adjust spacing between buttons */
+  background-color: #3498db; /* Blue color for Enroll button */
+  color: #fff; /* Text color for Enroll button */
+}
+
+/* Additional styles for the delete button */
+.delete-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #ff6347; /* Red color for Delete button */
+  color: #fff; /* Text color for Delete button */
+}
+
+
+    .course {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .aasrith{
+      color: #fff;
+    }
+    </style>
+  <main>
+    <section class="course-list">
+      <!-- List of existing courses with options to edit/delete -->
+      <div class="course">
+        <h2>Course Title 1</h2>
+        <p>Description of Course 1</p>
+        <a href="#" onclick="editCourse(1)" class="button">Edit</a>
+        <button onclick="deleteCourse(1)" class="delete-button">Delete</button>
+      </div>
+      <!-- More Course Entries -->
+    </section>
+  </main>
+  
+  <script>
+    function editCourse(courseId) {
+      // Implement logic to handle editing the course with the given ID
+      console.log(`Editing course with ID: ${courseId}`);
+      // Redirect to the course edit page with the courseId, e.g., "edit-course-details.html?id=1"
+      window.location.href = `edit-course-details.html?id=${courseId}`;
+    }
+
+    function deleteCourse(courseId) {
+      // Implement logic to handle deleting the course with the given ID
+      console.log(`Deleting course with ID: ${courseId}`);
+      // Perform deletion action (for example, from a server or local storage)
+      // Refresh the page or update the course list after deletion
+    }
+  </script>
+</body>
+</html>

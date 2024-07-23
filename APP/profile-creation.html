@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .container {
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .aasrith{
+            color:#fff;
+        }
+        .logout-button{
+            position: absolute;
+            top: 75px; /* Adjust the top position to create a four-line gap */
+            left: 20px; /* Adjust the right position as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 30px; /* Adjust the height for square shape */
+	        border-radius: 10%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logout-button:hover {
+            background-color: #eee; /* Change background color on hover if desired */
+        }
+        .container{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Information</h1>
+        <a href="index-1.html" class="logout-button">Back</a>
+    </header>
+    <main class="container">
+    <form id="profileForm">
+        <!-- Your profile creation form -->
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+        <br>
+        <label for="personalEmail">Personal Email:</label>
+        <input type="email" id="personalEmail" required>
+        <br>
+        <label for="collegeEmail">College Email:</label>
+        <input type="email" id="collegeEmail" required>
+        <br>
+        <label for="registerNumber">Register Number:</label>
+        <input type="text" id="registerNumber" required>
+        <br>
+        <button type="button" onclick="addStudent()">Submit</button>
+    </form>
+    </main>
+
+    <script>
+        function addStudent() {
+            var fullName = document.getElementById("fullName").value;
+            var personalEmail = document.getElementById("personalEmail").value;
+            var collegeEmail = document.getElementById("collegeEmail").value;
+            var registerNumber = document.getElementById("registerNumber").value;
+
+            var student = {
+                fullName: fullName,
+                personalEmail: personalEmail,
+                collegeEmail: collegeEmail,
+                registerNumber: registerNumber
+            };
+
+            var students = JSON.parse(localStorage.getItem("students")) || [];
+            students.push(student);
+            localStorage.setItem("students", JSON.stringify(students));
+
+            alert("Profile added successfully!");
+
+            document.getElementById("profileForm").reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Live Sessions</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        /* Add more styles as needed */
+        .session {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .session-info {
+            flex: 1;
+        }
+
+        .start-session-button {
+            padding: 8px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .logout-button{
+            position: absolute;
+            top: 75px; /* Adjust the top position to create a four-line gap */
+            left: 20px; /* Adjust the right position as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 30px; /* Adjust the height for square shape */
+	        border-radius: 10%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logout-button:hover {
+            background-color: #eee; /* Change background color on hover if desired */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Start Live Sessions</h1>
+        <a href="index-2.html" class="logout-button">Back</a> <!-- Link to Educator Dashboard or appropriate page -->
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Upcoming Live Sessions</h2>
+            <!-- List of upcoming live sessions -->
+            <div class="session">
+                <div class="session-info">
+                    <p>Session 1 - HTML (27-11-2023/00:55)</p>
+                </div>
+                <a href="start-session.html" class="start-session-button">Start Session</a>
+            </div>
+            <div class="session">
+                <div class="session-info">
+                    <p>Session 2 - CSS (28-11-2023/00:55)</p>
+                </div>
+                <a href="start-session.html" class="start-session-button" >Start Session</a>
+            </div>
+            <!-- Add more sessions -->
+        </section>
+
+        <section>
+            <h2>Recorded Sessions</h2>
+            <!-- List of recorded sessions -->
+            <ul>
+                <li>Recorded Session 1 - Topic 1</li>
+                <br>
+                <label for="courseVideo">Course Video:</label><br>
+      <br>
+      <input type="file" id="courseVideo" name="courseVideo"><br>
+      <br>
+      
+                <li>Recorded Session 2 - Topic 2</li>
+                <br>
+                <label for="courseVideo">Course Video:</label><br>
+      <br>
+      <input type="file" id="courseVideo" name="courseVideo"><br>
+                <!-- Add more recorded sessions -->
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

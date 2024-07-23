@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <style>
+        /* Your table styling here */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+        /* Add your CSS styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        /* Add more styles as needed */
+        .session {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .session-info {
+            flex: 1;
+        }
+
+        .start-session-button {
+            padding: 8px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .logout-button{
+            position: absolute;
+            top: 60px; /* Adjust the top position to create a four-line gap */
+            left: 20px; /* Adjust the right position as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 30px; /* Adjust the height for square shape */
+	        border-radius: 10%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logout-button:hover {
+            background-color: #eee; /* Change background color on hover if desired */
+        }
+    </style>
+</head>
+<body>
+    <section id="studentList">
+      <header>
+        <h1>Student List</h1>
+        <a href="educator-dashboard.html" class="logout-button">Back</a>
+    </header>
+    <br>
+    <br>
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Personal Email</th>
+                    <th>College Email</th>
+                    <th>Register Number</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Student data will be displayed here -->
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        var students = JSON.parse(localStorage.getItem("students")) || [];
+        var tableBody = document.getElementById("tableBody");
+
+        function removeStudent(index) {
+            students.splice(index, 1);
+            localStorage.setItem("students", JSON.stringify(students));
+            renderStudentList();
+        }
+
+        function renderStudentList() {
+            tableBody.innerHTML = "";
+            students.forEach(function(student, index) {
+                var newRow = tableBody.insertRow(-1);
+
+                var cell1 = newRow.insertCell(0);
+                cell1.innerHTML = student.fullName;
+
+                var cell2 = newRow.insertCell(1);
+                cell2.innerHTML = student.personalEmail;
+
+                var cell3 = newRow.insertCell(2);
+                cell3.innerHTML = student.collegeEmail;
+
+                var cell4 = newRow.insertCell(3);
+                cell4.innerHTML = student.registerNumber;
+
+                var cell5 = newRow.insertCell(4);
+                var deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "Delete";
+                deleteBtn.className = "delete-btn";
+                deleteBtn.onclick = function() {
+                    removeStudent(index);
+                };
+                cell5.appendChild(deleteBtn);
+            });
+        }
+
+        renderStudentList();
+    </script>
+</body>
+</html>

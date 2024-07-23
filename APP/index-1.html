@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Platform</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .course-container {
+  margin-bottom: 20px; /* Add margin between each course */
+}
+.profile-button {
+    position: absolute;
+            top: 75px; /* Adjust the top position to create a four-line gap */
+            right: 20px; /* Adjust the right position as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 30px; /* Adjust the height for square shape */
+	        border-radius: 10%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+    }
+
+    .profile-button:hover {
+        background-color: #eee; /* Change background color on hover if desired */
+    }
+
+    .logout-button{
+            position: absolute;
+            top: 75px; /* Adjust the top position to create a four-line gap */
+            left: 20px; /* Adjust the right position as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 30px; /* Adjust the height for square shape */
+	        border-radius: 10%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logout-button:hover {
+            background-color: #eee; /* Change background color on hover if desired */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning Platform</h1>
+    </header>
+
+    <main class="container">
+        <section>
+            <div class="card">
+                <h2>Learners</h2>
+                <p>Welcome to the learning platform! Access courses, resources, and track your progress.</p>
+                <a href="profile-creation.html" class="profile-button">Profile</a>
+                <a href="courses.html" class="button">Explore Courses</a>
+                <a href="live-sessions-students.html" class="button">Live Sessions</a>
+            </div>
+        </section>
+    </main>
+    <a href="index.html" class="logout-button">Back</a>
+</body>
+</html>
