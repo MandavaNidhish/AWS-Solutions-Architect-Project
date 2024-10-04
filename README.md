@@ -12,6 +12,4 @@ As our project needed the multi media content we uploaded the content of the cou
 
 ![image](https://github.com/user-attachments/assets/17a63966-a562-4cfc-a912-043b11a89047)
 
-Enclosed is my AWS-Solutions-Architect-Project repository for furthur details you can have a look over it:
 
-https://github.com/MandavaNidhish/AWS-Solutions-Architect-Project
